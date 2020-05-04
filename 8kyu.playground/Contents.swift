@@ -40,11 +40,33 @@ func reverse(_ str: String) -> String {
     return String(str.reversed())
 }
 
-expressionMatter(1, 2, 1)
+//multiplying a given number by eight if it is an even number and by nine otherwise.
+func simpleMultiplication(_ num: Int) -> Int {
+    if (num%2==0) {
+        return num*8
+    } else {
+        return num*9
+    }
+}
 
-firstNonConsecutive([9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20, 22])
-firstNonConsecutive([-2, -1, 0, 1])
+//Given a year, return the century it is in.
+func century(_ year: Int) -> Int {
+    if year == 0 {
+        return 1
+    }
+    if year%100==0 {
+        return year/100
+    } else {
+        return Int(year/100)+1
+    }
+}
 
-reverse("hi")
+
+//expressionMatter(1, 2, 1)
+//firstNonConsecutive([9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20, 22])
+//firstNonConsecutive([-2, -1, 0, 1])
+//reverse("hi")
+//simpleMultiplication(21)
+century(101)
 
 
