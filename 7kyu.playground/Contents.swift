@@ -31,7 +31,58 @@ func growingPlant(_ upSpeed: Int, _ downSpeed: Int, _ desiredHeight: Int) -> Int
     return day
 }
 
+//Your task is to add up letters to one letter.
+func addLetters(_ letters: [Character]) -> Character {
+    let letters = letters.map { $0.lowercased() }
+    let alphabet:[Character] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y","z"]
+    var sum = 0
+    var count = 1
+    var out: Character = "z"
+    
+    
+    
+    
+    for letter in letters {
+        count = 1
+        
+        for lett  in alphabet {
+            if lett == Character(letter){
+                sum = sum + count
+            } else {
+                count += 1
+            }
+        }
+    }
+    print("sum = \(sum)")
+    
+    while sum>26 {
+        sum = sum-26
+    }
+    print("outSum= \(sum)")
+    count = 1
+    
+    for lett in alphabet {
+        if sum == count {
+        out = lett
+        break
+        }
+        
+        if (sum == 0)||(sum == 26) {
+            return out
+        }
+        if sum == count {
+            out = lett
+            break
+        } else {
+            count += 1
+        }
+    }
+    print("out = \(out)")
+    return out
+}
+
 
 //digits(num: 0)
-growingPlant(100, 10, 910)
+//growingPlant(100, 10, 910)
+addLetters(["z", "z", "z", "z", "a", "z", "z", "z", "b"])
 
